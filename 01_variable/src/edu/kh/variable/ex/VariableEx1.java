@@ -66,6 +66,7 @@ public class VariableEx1 {
 		
 		/* 숫자 뒤에 f 안붙였을 때 */
 		// float temp2 = 1.23;
+	  // Type mismatch: cannot convert from double to float
 		
 		double temp3 = 3.14;
 		
@@ -84,15 +85,6 @@ public class VariableEx1 {
 		
 		
 		String str1 = "쌍따옴표가 String 리터럴 표기법";
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	}

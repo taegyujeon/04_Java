@@ -1,6 +1,6 @@
 package edu.kh.variable.ex;
 
-public class VriableEx3 {
+public class VariableEx3 {
 	
 	public static void main(String[] args) {
 		
@@ -94,7 +94,7 @@ public class VriableEx3 {
 		byte temp2 = (byte)(temp1 + 1); // int 결과를 byte로 강제 형변환
 		
 		System.out.println("temp1 : " + temp1); // 127
-		System.out.println("temp2 : " + temp2); // 127
+		System.out.println("temp2 : " + temp2); // -128
 	
 	}
 }
