@@ -27,7 +27,7 @@ public class Account {
 	// name 변수에 값을 세팅하는 간접 접근 기능
 	public void setName(String inputName) {
 		
-		// 매개 변수 String  inputName
+	// 매개 변수 String  inputName
 	// -> String 타입의 데이터를 전달 받아 저장할 변수
 			name = inputName;
 		}
@@ -116,8 +116,29 @@ public class Account {
 
 
 
-
-
+/**
+ * 현실 객체: 속성 + 기능,식별 가능
+ * 
+ * 객체 지향 언어:객체(상호작용) 객체 -> 사건
+ *               ==> 컴퓨터 속으로 쏙
+ * 
+ * 자바 객체:new heap 메모리 영역에 생성
+ * 
+ * class:객체의 속성 + 기능을 정의한것 (== 설계도)
+ * 
+ * new 연산자:heap 메모리 영역에 새로운 공간(객체/배열) 할당
+ * 
+ * 추상화:공통점만 추출, 불필요한 부분 제거
+ * 
+ * 캡술화:외부로 부터의 직접 접근 제한 + 그룹화
+ * 
+ * 캡슐화 원칙: 객체 속성 직접 접근 차단
+ * 1)private
+ * 2)간접 접근 방법 작성
+ * 
+ * heap 영역 할당 시 변수/요소가 빈칸으로 있을 수 없다!
+ * -> 기본 값이 대입되어 있음
+ */
 
 
 
