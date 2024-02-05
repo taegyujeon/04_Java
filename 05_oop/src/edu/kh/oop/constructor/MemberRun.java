@@ -55,7 +55,7 @@ public class MemberRun {
 	
 	// 메서드명 중복
 	public void test() {}
-	// public void test(){}
+	// public void test(){}w
 	
 }
 
