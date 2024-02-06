@@ -69,7 +69,7 @@ public class VariableEx1 {
 	  // Type mismatch: cannot convert from double to float
 		
 		double temp3 = 3.14;
-		
+		System.out.println(temp3);
 		//------------------------------------------------
 		
 		/* String (문자열)

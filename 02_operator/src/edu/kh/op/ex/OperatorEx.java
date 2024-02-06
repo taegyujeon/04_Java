@@ -118,6 +118,26 @@ public class OperatorEx {
 	
 	
 	
+	// 2~9사이의 정수만 입력 받아 해당 정수의 단을 출력
+	public void method5() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("2~9사이의 정수를 입력하시오: ");
+		
+		int input = sc.nextInt();
+		
+		while (true) {
+			if (input<=9 && input >=2) {
+				for(int num = 1; num <=9; num++) {
+					System.out.printf("%d * %d = %d\n",input,num,input*num);
+				} break;
+			}else {
+				System.out.println("2에서 9사이의 정수만 입력해주세요");
+			}
+		}
+	}
+	
+	
 	
 	
 	

@@ -17,7 +17,9 @@ public class OperatorRun {
 		// ex.method1(); // 3의 배수 확인
 		// ex.method2();
 	  // ex.method3();
-		ex.method4();
+		// ex.method4();
+		 ex.method5();
+		
 	}
 	
 }
