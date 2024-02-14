@@ -135,6 +135,7 @@ public class JavaAPIService {
 	
 	/**
 	 * String의 불변성(변하지 않는 성질 == 상수)
+	 * -문자열이 수정되면 새로운 String 객체가 생성됨
 	 */
 	public void method3() {
 		
@@ -159,6 +160,103 @@ public class JavaAPIService {
 		// --> str이 참조하고 있는 객체가 변하고 있다!
 		
 	}
+	
+	
+	/**
+	 * String 리터럴("")로 생성된 객체 활용
+	 * - 동일한 리터럴을 이용해 String 객체를 생성한 경우
+	 *   추가적으로 객체를 생성하지 않고
+	 *   기존에 존재하는 String 객체의 주소를 반환(재활용)
+	 */
+	public void method4() {
+		String temp1 = "Hello!!";
+		String temp2 = "Hello!!";
+		
+		System.out.println(System.identityHashCode(temp1));
+		System.out.println(System.identityHashCode(temp2));
+		
+		// 객체의 필드 값을 비교
+		System.out.println("저장된 값 비교 : " + temp1.equals(temp2) );
+		
+		// 변수에 저장된 값(주소) 비교
+		System.err.print("주소를 비교 : ");
+		System.out.println(temp1 == temp2);
+	}
+	
+	
+	/**
+	 * 사용자(개발자)가 관리하는 String 객체 생성
+	 * - "" 리터럴로 생성된 String -> JVM 관리(String Pool)
+	 * - new 연산자 생성된 String -> 사용자 관리(Heap)
+	 */
+	public void method5() {
+		String temp1 = "abcd"; // 리터럴로 생성
+		String temp2 = new String("abcd"); // new 연사자로 생성
+		String temp3 = new String("abcd"); // new 연사자로 생성
+		
+		System.out.println("temp1 : " + System.identityHashCode(temp1));
+		System.out.println("temp2 : " + System.identityHashCode(temp2));
+		System.out.println("temp3 : " + System.identityHashCode(temp3));
+		
+		// 셋 다 주소가 다름 == "abcd"를 재활용 하지 않음
+		// -> 값은 같지만 전부 다른 객체
+	}
+	
+	
+	/**
+	 * StringBuilder / StringBuffer 클래스
+	 * - String의 불변성 문제를 해결한 클래스
+	 * -> 가변성(mutable)
+	 * 
+	 * - 기본 16글자 저장할 크기로 생성
+	 *   저장되는 문자열의 길이에 따라 크기가 증가/감소
+	 *   -> 마음대로 문자열 수정,삭제 가능!
+	 *   -> 수정 삭제를 해도 추가적인 객체 생성이 없어 효율 좋음!
+	 *   
+	 *   -StringBuilder : Thread Safe 미제공 (비동기)
+	 *   -StringBuffer  : Thread Safe   제공 (동기)
+	 */
+	
+	public void method6() {
+		
+		// StringBuilder 객체 생성
+		StringBuilder sb = new StringBuilder();
+		
+		// StringBuilder 객체에 문자열을 쌓아 나가는 방식으로 사용
+		// -> 뒤에 추가, 앞에 추가
+		sb.append("오늘 점심은"); // 오늘 점심은
+		System.out.println(System.identityHashCode(sb));
+		
+		sb.append("무엇을 먹을까요?"); // 오늘 점심은 무엇을 먹을까요?
+		System.out.println(System.identityHashCode(sb));
+		
+		sb.insert(0, "2월 14일 "); // 0번 인덱스에 삽입 == 제일 앞에 추가
+		System.out.println(System.identityHashCode(sb));
+		
+		// identityHashCode 값이 일정함 
+		// == 참조하는 객체가 변하지 않음
+		// == 객체 내에 값만 수정되고 있다 == 가변성 
+		
+		System.out.println(sb);
+		
+		// StringBuilder -> String 변환
+		String temp = sb.toString(); // 객체에 저장된 필드를 문자열로 반환
+		
+		// String[] 문자열.split("구분자")
+		// - 문자열을 "구분자"를 기준으로 쪼개어 String[]로 반환
+		String[] arr = temp.split("");
+		
+		for(String str : arr) {
+			System.out.println(str);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 }
