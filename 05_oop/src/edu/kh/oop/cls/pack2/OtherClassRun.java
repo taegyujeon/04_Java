@@ -1,6 +1,7 @@
 package edu.kh.oop.cls.pack2;
 
 import edu.kh.oop.basic.Account;
+import edu.kh.oop.basic.Nation;
 
 public class OtherClassRun {
 
